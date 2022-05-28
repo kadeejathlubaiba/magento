@@ -1,0 +1,12 @@
+<?php
+$obj = \Magento\Framework\App\ObjectManager::getInstance();
+
+
+ 
+ $customerSession = $obj->get('Magento\Customer\Model\Session');
+ if($customerSession->isLoggedIn()) {
+ echo "Hi ". $customerSession->getCustomer()->getName()."<br/>"; // get Full Name
+ 
+ } else {
+ echo "Please Login";
+ }

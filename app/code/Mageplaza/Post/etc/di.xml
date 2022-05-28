@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<virtualType name="AllpostGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Mageplaza\Post\Model\ResourceModel\Allpost\Collection</argument>
+        </arguments>
+    </virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="post_allpost_listing_data_source" xsi:type="string">Mageplaza\Post\Model\ResourceModel\Allpost\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Mageplaza\Post\Model\ResourceModel\Allpost\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mageplaza_post</argument>
+            <argument name="eventPrefix" xsi:type="string">mageplaza_post_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">mageplaza_post_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Mageplaza\Post\Model\ResourceModel\Allpost</argument>
+        </arguments>
+    </type>
+</config>

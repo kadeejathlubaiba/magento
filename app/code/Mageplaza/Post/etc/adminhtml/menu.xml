@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+	  <add id="Mageplaza_Post::mageplaza" title="Experion" translate="title" module="Mageplaza_Post" sortOrder="90" dependsOnModule="Mageplaza_Post" resource="Mageplaza_Post::mageplaza"/>  
+	  <add id="Mageplaza_Post::post" title="Post" translate="title" module="Mageplaza_Post" parent="Mageplaza_Post::mageplaza" sortOrder="50" dependsOnModule="Mageplaza_Post" resource="Mageplaza_Post::post"/>
+	  <add id="Mageplaza_Post::post_allpost" title="Manage Posts" translate="title" module="Mageplaza_Post" parent="Mageplaza_Post::post" sortOrder="10" dependsOnModule="Mageplaza_Post" action="post/allpost" resource="Mageplaza_Post::post_allpost"/>
+	  <add id="Mageplaza_Post::settings" title="Settings" translate="title" module="Mageplaza_Post" parent="Mageplaza_Post::mageplaza" sortOrder="60" dependsOnModule="Mageplaza_Post" resource="Mageplaza_Post::settings"/>
+	  <add id="Mageplaza_Post::post_config" title=" Manage Posts Configuration" translate="title" module="Mageplaza_Post" parent="Mageplaza_Post::settings" sortOrder="10" dependsOnModule="Mageplaza_Post" action="adminhtml/system_config/edit/section/mageplaza_post" resource="Mageplaza_Post::post_config"/>
+	</menu>
+</config>
